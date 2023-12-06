@@ -1,0 +1,94 @@
+body {
+  display: block;
+  margin: 10px;
+  background: linear-gradient(
+    45.8deg,
+    rgb(175, 104, 254) 9.3%,
+    rgb(101, 223, 255) 75.1%
+  );
+}
+
+header {
+  display: block;
+  margin: 20px;
+}
+
+main {
+  background: #fff;
+  display: block;
+  padding: 10px;
+}
+
+footer {
+  font-family: "PT Mono", monospace;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+.weather-app {
+  display: block;
+  padding: 50px;
+  margin: 40px;
+}
+
+.search-input {
+  padding: 15px;
+  font-size: 15px;
+  font-family: "PT Mono", monospace;
+}
+
+.search-button {
+  padding: 20px;
+  border: 5px solid #fff;
+  border-radius: 18px;
+  background-color: #9818d6;
+  color: #fff;
+  font-family: "PT Mono", monospace;
+  font-size: 15px;
+}
+
+.search-button:hover {
+  cursor: pointer;
+  transition: ease-in-out;
+  background-color: #fff;
+  border: 5px solid #9818d6;
+  color: #000;
+}
+
+.current-weather-city {
+  display: block;
+  padding-left: 100px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.current-weather-day {
+  display: block;
+  padding-left: 100px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.current-weather-time {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.daily-weather-extra-info strong {
+  color: #9818d6;
+}
+
+.current-weather-temp {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  bottom: 50px;
+  margin-right: 60px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 500;
+  font-size: 95px;
+}
