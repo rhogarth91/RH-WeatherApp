@@ -14,7 +14,7 @@ header {
 }
 
 main {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 50px;
   display: block;
   padding: 15px;
@@ -37,11 +37,12 @@ footer {
   padding: 15px;
   font-size: 15px;
   font-family: "PT Mono", monospace;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .search-button {
   padding: 20px;
-  border: 5px solid #fff;
+  border: 5px solid rgba(255, 255, 255, 0.8);
   border-radius: 18px;
   background-color: #9818d6;
   color: #fff;
@@ -52,7 +53,7 @@ footer {
 .search-button:hover {
   cursor: pointer;
   transition: ease-in-out;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
   border: 5px solid #9818d6;
   color: #000;
 }
