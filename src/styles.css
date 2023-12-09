@@ -15,6 +15,7 @@ header {
 
 main {
   background: #fff;
+  border-radius: 50px;
   display: block;
   padding: 15px;
 }
