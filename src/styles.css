@@ -95,3 +95,11 @@ footer {
   font-size: 95px;
   line-height: 88px;
 }
+
+.weather-icon img {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  bottom: 60px;
+  margin-right: 60px;
+}
