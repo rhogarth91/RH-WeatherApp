@@ -15,7 +15,7 @@ function displayWeather(response) {
     response.data.condition.description;
   currentHumidityElement.innerHTML = response.data.temperature.humidity;
   currentWindElement.innerHTML = response.data.wind.speed;
-  weatherIconElement.innerHTML = `<img src=${response.data.condition.icon_url}" class="current-weather-temp" />`;
+  weatherIconElement.innerHTML = `<img src=${response.data.condition.icon_url} class="current-weather-temp" />`;
 }
 
 //Searched City Name
