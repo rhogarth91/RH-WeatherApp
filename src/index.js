@@ -5,11 +5,14 @@ function displayWeather(response) {
   let currentWeatherConditionElement = document.querySelector(
     "#weather-condition-currently"
   );
+  let currentHumidityElement = document.querySelector("#humidity-conditions");
 
   tempElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
   currentWeatherConditionElement.innerHTML =
     response.data.condition.description;
+
+  currentHumidityElement.innerHTML = response.data.temperature.humidity;
 }
 
 //Searched City Name
