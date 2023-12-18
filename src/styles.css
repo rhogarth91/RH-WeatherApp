@@ -80,7 +80,7 @@ footer {
   font-size: 30px;
 }
 
-.humidity-conditions strong {
+.humidity-conditions {
   color: #9818d6;
 }
 
@@ -88,9 +88,10 @@ footer {
   display: flex;
   justify-content: end;
   position: relative;
-  bottom: 50px;
+  bottom: 60px;
   margin-right: 60px;
   font-family: "Roboto Slab", serif;
   font-weight: 500;
   font-size: 95px;
+  line-height: 88px;
 }

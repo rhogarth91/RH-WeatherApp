@@ -1,4 +1,4 @@
-//Searched City Temperature
+//Searched City Current Weather
 function displayWeather(response) {
   let tempElement = document.querySelector("#current-temp");
   let cityElement = document.querySelector("#current-city");
@@ -7,6 +7,7 @@ function displayWeather(response) {
   );
   let currentHumidityElement = document.querySelector("#humidity-conditions");
   let currentWindElement = document.querySelector("#wind-conditions");
+  let weatherIconElement = document.querySelector("#weather-icon");
 
   tempElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
@@ -14,6 +15,7 @@ function displayWeather(response) {
     response.data.condition.description;
   currentHumidityElement.innerHTML = response.data.temperature.humidity;
   currentWindElement.innerHTML = response.data.wind.speed;
+  weatherIconElement.innerHTML = `<img src=${response.data.condition.icon_url}" class="current-weather-temp" />`;
 }
 
 //Searched City Name
