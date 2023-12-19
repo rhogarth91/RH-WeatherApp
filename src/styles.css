@@ -1,6 +1,6 @@
 body {
   display: block;
-  margin: 70px;
+  margin: 120px;
   background: linear-gradient(
     45.8deg,
     rgb(175, 104, 254) 9.3%,
@@ -30,7 +30,6 @@ footer {
 .weather-app {
   display: block;
   padding: 50px;
-  margin: 40px;
 }
 
 .search-input {

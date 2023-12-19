@@ -39,43 +39,54 @@
 
         <div class="current-weather-day">
           <span class="current-weather-time" id="current-time"></span>
-          <br/>
+          <br />
           Current weather conditions:
           <span id="weather-condition-currently"></span>
           <br />
           Humidity:
-           <span class="humidity-info" id="humidity-conditions"></span> %
-          Wind:  
-            <span class="wind-info" id="wind-conditions"></span> km/h
+          <span class="humidity-info" id="humidity-conditions"></span> % Wind:
+          <span class="wind-info" id="wind-conditions"></span> km/h
         </div>
-          <div class="current-weather-temp"><div id="weather-icon"></div><span id="current-temp"></span>°C
-          </div>
-        </main>
-
-          <div class="weather-forecast">
-            <div class="row"></div>
-              <div class="col-2"></div>
-                <div class="weather-forecast-day">Tues
-                  <br />
-                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" alt="" width="50" />
-                  <div class="weather-forecast-temps">
-                    <span class="weather-forecast-temp-max">9°C </span>
-                    <span class="weather-forecast-temp-min">7°C </span>
-                  </div>
-                </div>        
-          </div>
-
-          <footer>
-            <p>
-              This project was coded by <a href="https://github.com/rhogarth91" target="_blank">Rose H </a> 🌹 and is
-              <a href="https://github.com/rhogarth91/RH-WeatherApp" target="_blank"> open-sourced on GitHub</a> and
-              <a href="https://rh-weatherapp.netlify.app/" target="_blank">hosted on Netlify</a>
-            </p>
-          </footer>
-
-          <script src="src/index.js"></script>
+        <div class="current-weather-temp">
+          <div id="weather-icon"></div>
+          <span id="current-temp"></span>°C
         </div>
       </main>
+
+      <div class="weather-forecast">
+        <div class="row"></div>
+        <div class="col-2"></div>
+        <div class="weather-forecast-day">
+          Tues
+          <br />
+          <img
+            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+            alt=""
+            width="50"
+          />
+          <div class="weather-forecast-temps">
+            <span class="weather-forecast-temp-max">9°C </span>
+            <span class="weather-forecast-temp-min">7°C </span>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          This project was coded by
+          <a href="https://github.com/rhogarth91" target="_blank">Rose H </a> 🌹
+          and is
+          <a href="https://github.com/rhogarth91/RH-WeatherApp" target="_blank">
+            open-sourced on GitHub</a
+          >
+          and
+          <a href="https://rh-weatherapp.netlify.app/" target="_blank"
+            >hosted on Netlify</a
+          >
+        </p>
+      </footer>
+
+      <script src="src/index.js"></script>
     </div>
   </body>
 </html>
