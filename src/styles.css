@@ -113,8 +113,7 @@ footer {
   text-align: center;
 }
 
-.weather-forecast-date {
-  font-size: 40px;
+.weather-forecast-day {
   color: #000;
 }
 
