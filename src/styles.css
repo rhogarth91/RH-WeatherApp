@@ -80,7 +80,11 @@ footer {
   font-size: 30px;
 }
 
-.humidity-conditions {
+.humidity-info {
+  color: #9818d6;
+}
+
+.wind-info {
   color: #9818d6;
 }
 
