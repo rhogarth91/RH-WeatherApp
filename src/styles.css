@@ -109,22 +109,30 @@ footer {
 }
 
 .weather-forecast {
-  margin-top: 20px;
+  font-family: "Roboto Slab", serif;
+  margin: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
   text-align: center;
+}
+
+.weather-forecast-temps {
+  color: #9818d6;
 }
 
 .weather-forecast-day {
   color: #000;
-}
-
-.weather-forecast-temps {
   font-size: 25px;
+  font-weight: 500;
+  padding: 20px;
 }
 
 .weather-forecast-temp-max {
-  color: #9818d6;
+  font-size: 20px;
+  font-weight: 500;
 }
 .weather-forecast-temp-min {
-  color: #9818d6;
   opacity: 0.5;
+  font-size: 17px;
+  font-weight: 400;
 }
