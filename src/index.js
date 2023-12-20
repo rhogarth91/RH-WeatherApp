@@ -34,23 +34,34 @@ let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", searchInput);
 
 //Five Day Forecast
+function displayFiveDayOutlook() {
+  let days = ["Tues", "Wed", "Thurs", "Fri", "Sat"];
+  let forecastHtml = "";
 
-let weatherOutlook = document.querySelector("#five-day-outlook");
-
-weatherOutlook.innerHTML = `
-<div class="weather-forecast-day">
-  <div class="weather-forecast-day"> Tues </div>
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+    <div class="weather-forecast-day">
+        <div class="weather-forecast-date">${day}</div>
           <br />
-  <div class="weather-forecast-icon><img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+        <div class="weather-forecast-icon"><img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
             alt=""
             width="50"
           /></div>
-          <div class="weather-forecast-temps">
+        <div class="weather-forecast-temps">
             <span class="weather-forecast-temp-max">9°C </span>
             <span class="weather-forecast-temp-min">7°C </span>
           </div>
-        </div>
-`;
+    </div>
+    `;
+  });
+
+  let forecastElement = document.querySelector("#five-day-outlook");
+  forecastElement.innerHTML = forecastHtml;
+}
+
+displayFiveDayOutlook();
 
 //Current Time and Date Info
 let timeAndDateNow = new Date();
