@@ -14,7 +14,7 @@ function displayWeather(response) {
   currentWeatherConditionElement.innerHTML =
     response.data.condition.description;
   currentHumidityElement.innerHTML = response.data.temperature.humidity;
-  currentWindElement.innerHTML = response.data.wind.speed;
+  currentWindElement.innerHTML = Math.round(response.data.wind.speed);
   weatherIconElement.innerHTML = `<img src=${response.data.condition.icon_url} class="weather-icon" />`;
 }
 
@@ -32,6 +32,25 @@ function searchInput(event) {
 
 let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", searchInput);
+
+//Five Day Forecast
+
+let weatherOutlook = document.querySelector("#five-day-outlook");
+
+weatherOutlook.innerHTML = `
+<div class="weather-forecast-day">
+  <div class="weather-forecast-day"> Tues </div>
+          <br />
+  <div class="weather-forecast-icon><img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+            alt=""
+            width="50"
+          /></div>
+          <div class="weather-forecast-temps">
+            <span class="weather-forecast-temp-max">9°C </span>
+            <span class="weather-forecast-temp-min">7°C </span>
+          </div>
+        </div>
+`;
 
 //Current Time and Date Info
 let timeAndDateNow = new Date();
