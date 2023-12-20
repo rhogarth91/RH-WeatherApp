@@ -34,8 +34,8 @@ let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", searchInput);
 
 //Five Day Forecast
-function displayFiveDayOutlook() {
-  let days = ["Tues", "Wed", "Thurs", "Fri", "Sat"];
+function displayWeatherOutlook() {
+  let days = ["Tues", "Wed", "Thur", "Fri", "Sat"];
   let forecastHtml = "";
 
   days.forEach(function (day) {
@@ -57,11 +57,11 @@ function displayFiveDayOutlook() {
     `;
   });
 
-  let forecastElement = document.querySelector("#five-day-outlook");
+  let forecastElement = document.querySelector("#weather-outlook");
   forecastElement.innerHTML = forecastHtml;
 }
 
-displayFiveDayOutlook();
+displayWeatherOutlook();
 
 //Current Time and Date Info
 let timeAndDateNow = new Date();

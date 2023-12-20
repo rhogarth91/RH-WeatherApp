@@ -108,15 +108,14 @@ footer {
 }
 
 .weather-forecast {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 30px;
+  padding: 10px;
   font-family: "Roboto Slab", serif;
-  margin: 20px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 50px;
-  text-align: center;
-}
-
-.weather-forecast-temps {
-  color: #9818d6;
 }
 
 .weather-forecast-day {
@@ -124,6 +123,11 @@ footer {
   font-size: 25px;
   font-weight: 500;
   padding: 20px;
+  margin: 25px;
+}
+
+.weather-forecast-temps {
+  color: #9818d6;
 }
 
 .weather-forecast-temp-max {
