@@ -1,20 +1,14 @@
-//Searched City
-function searchInput(event) {
-  event.preventDefault();
-
-  let citySearchInput = document.querySelector("#city-search-input");
-  let userCityInput = citySearchInput.value;
+//Searched City and API Links
+function searchCity(city) {
   let apiKey = "74a685e33bd3f486faa1o3tac33e021d";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${userCityInput}&key=${apiKey}&units=metric`;
-
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
 
-function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let daysOfTheWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  return daysOfTheWeek[date.getDay()];
+function searchInput(event) {
+  event.preventDefault();
+  let citySearchInput = document.querySelector("#city-search-input");
+  searchCity(citySearchInput.value);
 }
 
 function getForecast(city) {
@@ -46,7 +40,14 @@ function displayWeather(response) {
   getForecast(response.data.city);
 }
 
-//Five Day Forecast
+//Five Day Forecast For Searched City
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let daysOfTheWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return daysOfTheWeek[date.getDay()];
+}
+
 function displayWeatherOutlook(response) {
   let forecastHtml = "";
 
@@ -81,9 +82,9 @@ function displayWeatherOutlook(response) {
 let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", searchInput);
 
-displayWeather();
+searchCity("Newcastle Upon Tyne");
 
-//Current Time and Date Info
+//Current Time and Date Info For Searched City
 let timeAndDateNow = new Date();
 
 let daysOfWeek = [
