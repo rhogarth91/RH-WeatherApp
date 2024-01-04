@@ -1,3 +1,22 @@
+//Searched City
+function searchInput(event) {
+  event.preventDefault();
+
+  let citySearchInput = document.querySelector("#city-search-input");
+  let userCityInput = citySearchInput.value;
+  let apiKey = "74a685e33bd3f486faa1o3tac33e021d";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${userCityInput}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayWeather);
+}
+
+function getForecast(city) {
+  let apiKey = "74a685e33bd3f486faa1o3tac33e021d";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayWeatherOutlook);
+}
+
 //Searched City Current Weather
 function displayWeather(response) {
   let tempElement = document.querySelector("#current-temp");
@@ -16,42 +35,32 @@ function displayWeather(response) {
   currentHumidityElement.innerHTML = response.data.temperature.humidity;
   currentWindElement.innerHTML = Math.round(response.data.wind.speed);
   weatherIconElement.innerHTML = `<img src=${response.data.condition.icon_url} class="weather-icon" />`;
+
+  getForecast(response.data.city);
 }
-
-//Searched City Name
-function searchInput(event) {
-  event.preventDefault();
-
-  let citySearchInput = document.querySelector("#city-search-input");
-  let userCityInput = citySearchInput.value;
-  let apiKey = "74a685e33bd3f486faa1o3tac33e021d";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${userCityInput}&key=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(displayWeather);
-}
-
-let form = document.querySelector("#city-search-form");
-form.addEventListener("submit", searchInput);
 
 //Five Day Forecast
-function displayWeatherOutlook() {
-  let days = ["Tues", "Wed", "Thur", "Fri", "Sat"];
+function displayWeatherOutlook(response) {
   let forecastHtml = "";
 
-  days.forEach(function (day) {
+  response.data.daily.forEach(function (day) {
     forecastHtml =
       forecastHtml +
       `
     <div class="weather-forecast-day">
-        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-date">Tues</div>
           <br />
         <div class="weather-forecast-icon"><img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
             alt=""
             width="50"
           /></div>
         <div class="weather-forecast-temps">
-            <span class="weather-forecast-temp-max">9°C </span>
-            <span class="weather-forecast-temp-min">7°C </span>
+            <span class="weather-forecast-temp-max">${Math.round(
+              day.temperature.maximum
+            )}°C </span>
+            <span class="weather-forecast-temp-min">${Math.round(
+              day.temperature.minimum
+            )}°C</span>
           </div>
     </div>
     `;
@@ -61,7 +70,10 @@ function displayWeatherOutlook() {
   forecastElement.innerHTML = forecastHtml;
 }
 
-displayWeatherOutlook();
+let form = document.querySelector("#city-search-form");
+form.addEventListener("submit", searchInput);
+
+displayWeather();
 
 //Current Time and Date Info
 let timeAndDateNow = new Date();
