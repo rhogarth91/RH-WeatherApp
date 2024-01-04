@@ -136,17 +136,22 @@ footer {
 
 .weather-forecast-temps {
   color: #9818d6;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  justify-content: space-around;
 }
 
 .weather-forecast-temp-max {
   font-size: 20px;
   font-weight: 500;
+  margin: 10px;
+  text-align: center;
 }
 .weather-forecast-temp-min {
-  opacity: 0.5;
+  opacity: 0.6;
   font-size: 17px;
   font-weight: 400;
+  margin: 10px;
+  text-align: center;
 }
