@@ -43,17 +43,17 @@ function displayWeather(response) {
 function displayWeatherOutlook(response) {
   let forecastHtml = "";
 
-  response.data.daily.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
     <div class="weather-forecast-day">
         <div class="weather-forecast-date">Tues</div>
           <br />
-        <div class="weather-forecast-icon"><img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-            alt=""
-            width="50"
-          /></div>
+        <div class="weather-forecast-icon"><img src="${
+          day.condition.icon_url
+        }" alt="weather icon"/></div>
         <div class="weather-forecast-temps">
             <span class="weather-forecast-temp-max">${Math.round(
               day.temperature.maximum
@@ -64,6 +64,7 @@ function displayWeatherOutlook(response) {
           </div>
     </div>
     `;
+    }
   });
 
   let forecastElement = document.querySelector("#weather-outlook");

@@ -81,10 +81,12 @@ footer {
 
 .humidity-info {
   color: #9818d6;
+  font-weight: 700;
 }
 
 .wind-info {
   color: #9818d6;
+  font-weight: 700;
 }
 
 .current-weather-temp {
@@ -100,11 +102,10 @@ footer {
 }
 
 .weather-icon img {
-  display: flex;
-  justify-content: end;
-  position: relative;
-  bottom: 60px;
-  margin-right: 60px;
+  display: block;
+  margin: 0 auto;
+  width: 90px;
+  height: 90px;
 }
 
 .weather-forecast {
@@ -123,11 +124,21 @@ footer {
   font-size: 25px;
   font-weight: 500;
   padding: 20px;
-  margin: 25px;
+  display: block;
+  margin: 0 auto;
+}
+
+.weather-forecast-date {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .weather-forecast-temps {
   color: #9818d6;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .weather-forecast-temp-max {
