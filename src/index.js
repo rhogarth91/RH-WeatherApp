@@ -85,52 +85,12 @@ form.addEventListener("submit", searchInput);
 searchCity("Newcastle Upon Tyne");
 
 //Current Time and Date Info For Searched City
-function updateCurrentTime() {
-  let timeAndDateNow = new Date();
-
-  let daysOfWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let currentDay = daysOfWeek[timeAndDateNow.getDay()];
-
-  let currentDate = timeAndDateNow.getDate();
-
-  let monthsInYear = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "June",
-    "July",
-    "Aug",
-    "Sept",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  let currentMonth = monthsInYear[timeAndDateNow.getMonth()];
-
-  let currentYear = timeAndDateNow.getFullYear();
-
-  let hour = timeAndDateNow.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-
-  let minutes = timeAndDateNow.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  let uptodateDateAndTime = document.querySelector("#current-time");
-  uptodateDateAndTime.innerHTML = `${currentDay} ${currentDate} ${currentMonth} ${currentYear}, ${hour}:${minutes}`;
+function timeZoneForSearchedCity() {
+  let localTime = moment()
+    .tz("Europe/London")
+    .format("dddd, MMM Do YYYY h:mm:ss A");
+  let localTimeElement = document.querySelector("#current-time");
+  localTimeElement.innerHTML = localTime;
 }
 
-setInterval(updateCurrentTime, 1000);
+setInterval(timeZoneForSearchedCity, 1000);
